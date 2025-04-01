@@ -1,10 +1,22 @@
 import Pessoa from "./Pessoa.js";
 
 class Professor extends Pessoa {
+    constructor(nome, idade, disciplina) {
+        super(nome, idade);
+        this._disciplina = disciplina;
+    }
 
-    falar() {
+    get disciplina() {
+        return this._disciplina;
+    }
 
-        console.log("Dando aula");
+    set disciplina(novaDisciplina) {
+        this._disciplina = novaDisciplina;
+    }
+
+    exibirInformacoes() {
+        super.exibirInformacoes();
+        console.log("Disciplina: " + this._disciplina);
     }
 }
 

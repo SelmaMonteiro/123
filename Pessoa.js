@@ -1,38 +1,28 @@
-
 class Pessoa {
-    #nome; // Atributo privado
-    #idade;
-
     constructor(nome, idade) {
-        this.#nome = nome;
-        this.#idade = idade;
+        this._nome = nome;
+        this._idade = idade;
     }
 
-    // Getter para nome
     get nome() {
-        return this.#nome;
+        return this._nome;
     }
 
-    // Setter para nome
     set nome(novoNome) {
-        if (this.#idade >= 18) {
-            this.#nome = novoNome;
-            console.log(`Nome alterado para: ${this.#nome}`);
-        } else {
-            console.log("Erro: Apenas maiores de 18 anos podem trocar de nome.");
-        }
+        this._nome = novoNome;
     }
 
-    // Getter para idade
     get idade() {
-        return this.#idade;
+        return this._idade;
     }
 
-    falar() {
-        console.log("Falando");
+    set idade(novaIdade) {
+        this._idade = novaIdade;
+    }
+
+    exibirInformacoes() {
+        console.log("Nome: " + this._nome + ", Idade: " + this._idade);
     }
 }
-
-
 
 export default Pessoa;
